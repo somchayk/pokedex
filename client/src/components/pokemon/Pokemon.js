@@ -1,9 +1,9 @@
 import React from 'react';
-import { Table } from 'semantic-ui-react';
+import { Table, Button, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 
-const Pokemon = ({ id, name, pokemon_type, moves, level, weight, height }) => (
+const Pokemon = ({ id, name, pokemon_type, moves, level, weight, height, releasePokemon, updatePokemon }) => (
   <Table.Row>
     <Table.Cell>
       <Link 
@@ -19,6 +19,13 @@ const Pokemon = ({ id, name, pokemon_type, moves, level, weight, height }) => (
     <Table.Cell>{moves}</Table.Cell>
     <Table.Cell>{weight}</Table.Cell>
     <Table.Cell>{height}</Table.Cell>
+    <Table.Cell>
+      <Button color='red' onClick={ () => releasePokemon(id) }>
+        <Icon name='trash' />
+      </Button>
+    </Table.Cell>
   </Table.Row>
 )
+
+
 export default Pokemon;

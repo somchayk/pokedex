@@ -22,7 +22,7 @@ class Api::PokemonsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @pokemon = Pokemon.find(params[:id]).destory
     render json: { message: 'Item Deleted'}
   end
